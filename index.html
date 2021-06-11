@@ -49,7 +49,7 @@
 
     <h3>unordered list</h3>
 
-    <ul>
+    <ul class="list-non-bullet">
         <li>Item One</li>
         <li>Item two</li>
         <li>Item three</li>
@@ -57,15 +57,15 @@
 
     <h3>unordered inline list</h3>
     
-    <ul>
-        <li>Inline Item One</li>
-        <li>Inline Item two</li>
-        <li>Inline Item three</li>
+    <ul class="list-non-bullet">
+        <li class="list-item-inline">Inline Item One</li>
+        <li class="list-item-inline">Inline Item two</li>
+        <li class="list-item-inline">Inline Item three</li>
     </ul>
 
     <h3>reverse ordered list</h3>
 
-    <ol>
+    <ol reversed>
         <li>milk</li>
         <li>eggs</li>
         <li>bread</li>
@@ -75,38 +75,42 @@
 
     <h2>@nav</h2>
 
-    <nav>
-        <div>IAmbrand</div>
-        <ul>
-            <li>
-                <a href="/">home</a>
+    <nav class="navigation container">
+        <div class="nav-brand">IAmbrand</div>
+        <ul class="list-non-bullet nav-pills>">
+            <li class="list-item-inline">
+                <a class= "link link-active" href="/">home</a>
             </li>
-            <li>
-                <a href="/">products</a>
+            <li class="list-item-inline">
+                <a class= "link" href="/">products</a>
             </li>
-            <li>
-                <a href="/">about</a>
+            <li class="list-item-inline">
+                <a class= "link" href="/">about</a>
             </li>
         </ul>
     </nav>
 
     <h2>header</h2>
 
-    <header>
-        <img src="images/hero-img.svg" />
-        <h1>heading inside hero</h1>
+    <header class="hero">
+        <img class="hero-img" src="images/hero-img.svg" />
+        <h1 class="hero-heading">heading inside <span class = "heading-inverted">web developer</span></h1>
     </header>
 
     <hr>
     <h2>@section</h2>
-    <section>
-        <h3>@white section</h3>
-        <p>This will have white background</p>
+    <section class="section">
+        <div class="container container-center">
+            <h1>@white section</h1>
+            <p>This will have white background</p>
+        </div>
     </section>
 
-    <section>
-        <h3>@off white section</h3>
-        <p>This will have grey </p>
+    <section class="section ow">
+        <div class="container container-center">
+            <h1>@off white section</h1>
+            <p>This will have grey </p>
+        </div>
     </section>
 
     <hr>
