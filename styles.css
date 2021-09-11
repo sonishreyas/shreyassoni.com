@@ -96,12 +96,19 @@ hr {
     text-align: center;
     padding-top: 1rem;
     color: var(--dark-grey);
+    
 }
 
 .hero .hero-heading .heading-inverted {
     color: var(--primary-color);
 }
-
+/** blog **/
+.blog .blog-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 /** sections **/
 
 .section {
