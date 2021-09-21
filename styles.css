@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 :root {
-    --primary-color: #4F46E5;
+    --primary-color: #111827;
     --off-white: #F3F4F6;
     --dark-grey: #111827
 }
@@ -39,15 +39,28 @@ hr {
 
 .link-primary {
     background-color: var(--primary-color);
-    border-radius: 0.5rem;;
+    border-radius: 2rem;;
     color: white
 
 }
 
 .link-secondary {
     color: var(--primary-color);
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     border:1px solid var(--primary-color);
+}
+
+.link-secondary-section {
+    background-color: white;
+    border-radius: 2rem;;
+    color: var(--primary-color)
+
+}
+
+.link-primary-section {
+    color: white;
+    border-radius: 2rem;
+    border:1px solid var(--off-white);
 }
 
 /** lists **/
@@ -95,9 +108,10 @@ hr {
 }
 
 .hero .hero-img {
-    max-width: 350px;
+    max-width: 250px;
     display: block;
     margin: auto;
+    border-radius: 16rem;
 }
 
 .hero .hero-heading {
@@ -108,7 +122,7 @@ hr {
 }
 
 .hero .hero-heading .heading-inverted {
-    color: var(--primary-color);
+    color: gray;
 }
 /** blog **/
 .blog .blog-img {
@@ -119,6 +133,14 @@ hr {
 
 .section {
     padding: 2rem;
+    margin: auto;
+    max-width: 800px;
+    border-radius: 2rem;
+    background-color: var(--primary-color);
+    color: whitesmoke;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
 }
 .section h1 {
     text-align: center;
@@ -127,6 +149,7 @@ hr {
 
 .ow {
     background-color: var(--off-white);
+    color: var(--dark-grey);
 }
 
 /** footers **/
