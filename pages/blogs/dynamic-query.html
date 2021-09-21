@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Shreyas Soni</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navigation container">
+        <!-- <div class="nav-brand">Shreyas Soni</div> -->
+        <ul class="list-non-bullet nav-pills">
+            <li class="list-item-inline">
+                <a class= "link" href="/">Home</a>
+            </li>
+            <li class="list-item-inline">
+                <a class= "link" href="../experience.html">Experience</a>
+            </li>
+            <li class="list-item-inline">
+                <a class= "link link" href="../projects.html">Projects</a>
+            </li>
+            <li class="list-item-inline">
+                <a class= "link" href="../publications.html">Publications</a>
+            </li>
+            <li class="list-item-inline">
+                <a class= "link link-active" href="../blogs.html">Blogs</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 class="hero-heading">Read a Query from a file and Execute in Salesforce and Snowflake in Mulesoft</h1>
+    </header>
+    
+    <div class="blog">
+        <p>In this blog, we will see how we can dynamically read a query from a SOQL/SQL file in Mulesoft and execute it in Salesforce and Snowflake, and return the result in JSON format.</p>
+        <h2>Why read a query from a file?</h2>
+        <p>If we directly write the query in the connector then any changes we need to be made in the query </p>        
+        
+            <h2>Setting up tables in Salesforce and Snowflake.</h2>
+            <ul>
+                <li><h3>Salesforce</h3></li>
+                <ul>
+                    <li>Login to your Salesforce Account.</li>
+                    <li>Select App Manager from Home -> Platform Tools -> Apps -> Apps Manager.</li>
+                    <li>Select New Lightning App.</li>
+                    <li>Give App name and Developer name to the app and click next.</li>
+                    <li>Click Next.</li>
+                    <li>Click Next.</li>
+                    <li>In Navigation Items, select create -> custom object from a spreadsheet.</li>
+                    <li>Login to the new window and select one of the three options.</li>
+                    <li>Once the file is uploaded it will prompt the object description. Click next and give the label and API name and select Finish.</li>
+                    <li>Now back to the previous window. Click refresh next to create.</li>
+                    <li>Select the object you made.</li>
+                    <li>Click next. Select who has access to the app.</li>
+                    <li>Click Save & Finish.</li>
+                </ul>
+                <li><h3>Snowflake</h3></li>
+                <ul>
+                    <li>Login to your Snowflake Account.</li>
+                    <li>Create a new Database or select a database.</li>
+                    <li>Create a new Schema.</li>
+                    <li>Create a table according to your requirement.</li>
+                    <li>Test your table in worksheet. (Optional)</li>
+                </ul>
+            </ul>
+        <h2>Creating the Mulesoft Application</h2>
+        <ul>
+            <li>Create a new Mule Project.</li>
+            <li>Create two new Flows.</li>
+            <li>Add a http listener to each flow. Setup the http config and give the path to them.</li>
+            <li>Now, create a folder name Files in src/resources/main. Create two files named input_salesforce.soql and input_snowflake.sql.</li>
+            <li>Put the select query of salesforce in input_salesforce.soql file and snowflake query in input_snowflake.sql file.</li>
+            <li>Add a file, salesforce and snowflake connector to the project from Mule Palette. I any of the connector is not present import it from exchange.</li>
+            <li>Add a read file connector to both the flows.</li>
+            <li>Setup File Config and set the workingDir to the Files directory we created in step 4.</li>
+            <li>Now, add a Transform Message like below.</li>
+            <textarea class="output"><ee:transform doc:name="Transform Message" doc:id="3a0b21cd-639b-4c44-b9e2-21d9aa569eb8">
+    <ee:message>
+        <ee:set-payload ><![CDATA[%dw 2.0
+            output application/json
+            ---
+            payload]]>
+        </ee:set-payload>
+    </ee:message>
+</ee:transform>
+            </textarea>
+            <li>Now, add a Salesforce Query Connector to the salesforce flow. In input parameter specify "query": payload and specify SQL query as  :query and configure the salesforce config.</li>
+            <p><strong>Query Connector:</strong><p>
+            <textarea class="output"><salesforce:query doc:id="4c0ae3b8-26d3-413d-bd5d-8b56b4d6fe3c" config-ref="Salesforce_Config" doc:name="Query" >
+    <salesforce:salesforce-query >
+        <![CDATA[:query]]>
+    </salesforce:salesforce-query>
+    <salesforce:parameters >
+        <![CDATA[#[output application/java
+            ---
+            {
+                "query" : payload
+            }]]]>
+    </salesforce:parameters>
+</salesforce:query>
+        </textarea>
+        <p><strong>Salesforce Configuration:</strong><p>
+            <textarea class="output" ><salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="f72508d5-dc11-4cf7-a429-30ab6ae53784" >
+    <salesforce:basic-connection 
+        username="${sfdc-trial.username}" 
+        password="${sfdc-trial.password}" 
+        securityToken="${sfdc-trial.token}" />
+</salesforce:sfdc-config>
+        </textarea>
+        <li>Now, add a Snowflake Select Connector to the snowflake flow. Specify SQL query as #[payload] and configure the snowflake config.</li>
+            <p><strong>Select Query Connector:</strong><p>
+            <textarea class="output"><snowflake:select doc:name="Select" doc:id="38c01519-2934-400d-b92a-40191f05424f" config-ref="Snowflake_Config">
+    <snowflake:sql >
+        <![CDATA[#[payload]]]>
+    </snowflake:sql>
+</snowflake:select>
+        </textarea>
+        <p><strong>Snowflake Configuration:</strong><p>
+            <textarea class="output" ><snowflake:snowflake-config name="Snowflake_Config" doc:name="Snowflake Config" doc:id="88405cb6-8d03-4447-95fa-0639b2e91043" >
+    <snowflake:snowflake-connection 
+        accountName="${snow.account}" 
+        warehouse="${snow.warehouse}" 
+        database="${snow.database}" 
+        schema="${snow.scheme}" 
+        user="${snow.user}" 
+        password="${snow.password}" />
+</snowflake:snowflake-config>
+        </textarea>
+        <li>Add another transform message to both the flows to convert the java output to JSON.</li>
+        <textarea class="output"><ee:transform doc:name="Transform Message" doc:id="3a0b21cd-639b-4c44-b9e2-21d9aa569eb8">
+    <ee:message>
+        <ee:set-payload ><![CDATA[%dw 2.0
+            output application/json
+            ---
+            payload]]>
+        </ee:set-payload>
+    </ee:message>
+</ee:transform>
+        </textarea>
+        <li>Add a logger to Log the payload.</li>
+        <li>Run the Application.</li>
+        </ul>
+    </div>
+        
+
+    <footer class="footer">
+        <div class="footer-header">Connect to me</div>
+        <ul class="social-links list-non-bullet">
+            <li class="list-item-inline">
+                <a class="link" href="https://github.com/sonishreyas">
+                    Github
+                </a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="https://www.linkedin.com/in/shreyas-soni-00752618b/">
+                    LinkedIn
+                </a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="sonishreyas10@gmail.com">
+                    Email
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

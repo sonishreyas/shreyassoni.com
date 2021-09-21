@@ -16,6 +16,12 @@ hr {
 .container {
     padding: 0rem 1rem;
 }
+.blog {
+    padding: 0rem 1rem;
+    display: block;
+    max-width: 600px;
+    margin:auto;
+}
 
 .container-center {
     max-width: 600px;
@@ -106,10 +112,8 @@ hr {
 }
 /** blog **/
 .blog .blog-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    height: 500px;
+    width: 900px;
 }
 /** sections **/
 
@@ -134,6 +138,8 @@ hr {
     color: white;
     border-top-right-radius: 2.5rem;
     border-top-left-radius: 2.5rem;
+    clear: both;
+    position: relative;
 }
 
 .footer .link {
@@ -152,3 +158,12 @@ hr {
     display: block;
     margin: auto;
 }
+
+.output {
+    height: 25vh;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: left;
+    color: black;
+}
+
