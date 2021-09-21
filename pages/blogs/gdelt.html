@@ -28,24 +28,115 @@
         </ul>
     </nav>
     <header class="hero">
-        <h1 class="hero-heading">Retrieve Geopolitical data from GDELT</h1>
+        <h1 class="hero-heading">Explore Geopolitical data from GDELT</h1>
     </header>
     
     <div class="blog">
-        <p>In this blog, we will see how we can retrieve geopolitical data from GDELT.</p>
+        <p>In this blog, we will explore the geopolitical data from GDELT and see how that data can be used in the analysis.</p>
         <h2>What is GDELT?</h2>
-        <p>The GDELT Project created by Kalev H. Leetaru, monitors the world's news from every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images and events driving our global society.</p>
-        <p>In this blog we will have a look at the Events database of GDELT and how this data can be used for analysis.</p>
+        <p>The GDELT Project created by Kalev H. Leetaru monitors the world's news from every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images, and events driving our global society.</p>
+        <p>In this blog, we will have a look at the Events database of GDELT and how this data can be used for analysis.</p>
         <h2>Event Database</h2>
+        <p>The GDELT Event Database catalog over 20 main categories and more than 300 subcategories. Each category is given a particular cameo code. We will be looking into the 20 main cameo codes. That includes</p>
+        <ol>
+            <li>Make Public Statement</li>
+            <li>Appeal</li>
+            <li>Express intent to cooperate</li>
+            <li>Consult</li>
+            <li>Engage in diplomatic cooperation</li>
+            <li>Engage in material cooperation</li>
+            <li>Provide aid</li>
+            <li>Yield</li>
+            <li>Investigate</li>
+            <li>Demand</li>
+            <li>Disapprove</li>
+            <li>Reject</li>
+            <li>Threaten</li>
+            <li>Protest</li>
+            <li>Exhibit military posture</li>
+            <li>Reduce relations</li>
+            <li>Coerce</li>
+            <li>Assault</li>
+            <li>Fight</li>
+            <li>Use unconventional mass violence</li>
+        </ol>
+        <p>Let's see how we can get the data for these events for all countries.</p>
         <h2>How to get the data?</h2>
-        <h2>Processing the data</h2>
-        <h2>Data Usage</h2>
-        
-        
-        
-        
-    </div> 
+        <ul>
+            <li><h3><a href="https://bigquery.cloud.google.com/table/gdelt-bq:gdeltv2.events">BigQuery</a></h3></li>
+            <p>You can query any data you want according to your need. Here is an example of a query.</p>
+            <textarea class="output-blog-2">select SQLDATE,EventRootCode,Actor1CountryCode,NumMentions from gdeltv2.events;
+            </textarea>
+            <li><h3>Using <a href="https://pypi.org/project/gdelt/">gdelt</a> python package</h3></li>
+            <ul>
+                <li><strong>Installation:</strong> pip install gdelt</li>
+                <li>Call the gdelt version 2 database.  </li>
+                <textarea class="output-blog-2">gd2 = gdelt.gdelt(version=2)</textarea>
+                <li>Use gd2 object to search for the data of a given date and set table to events.</li>
+                <textarea class="output-blog-2">results = gd2.Search(['2020-01-01'],table='events',coverage=True)</textarea>
+            </ul> 
+        </ul>
+        <p></p>
+        <h2>Processing the data to get Timeseries data for all countries</h2>
+        <ul>
+            <li>Load the data into the notebook.</li>
+            <textarea class="output-blog-2">
 
+df = pd.read_csv("gdelt.csv");
+            </textarea>
+            <li>The data output of the gdelt object has all the columns present in the events database. Now filter it to the columns necessary, i.e., SQLDATE, EventRootCode, Actor1CountryCode, NumMentions</li>
+            <textarea class="output-blog-2">
+results = results[['SQLDATE','EventRootCode','NumMentions','Actor1CountryCode']]
+            </textarea>
+            <li>Convert the SQLDATE format from 'YYYYMMDD' to 'YYYY-MM-DD'.</li>
+            <textarea class="output-blog-2">
+results['SQLDATE'] = results['SQLDATE'].apply(lambda x: pd.to_datetime(str(x), format='%Y-%m-%d'))            
+            </textarea>
+            <li>Aggregate the data based on SQLDATE, EventRootCode, and Actor1CountryCode.</li>
+            <textarea class="output-blog-2">
+results = results.groupby(['SQLDATE','EventRootCode','Actor1CountryCode']).agg('sum').reset_index()
+            </textarea>
+        </ul>
+        <h2>Data Analysis and Visualization</h2>
+        <ul>
+            <li>Mapping a Line Chart of a particular Cameo code for the country over time.</li>
+            <p><strong>Example:</strong> Protest in USA (Aggregated to Weekly basis)</p>
+        </ul>
+    </div>
+    <img src="./images/time-series-example.png" class="img-gdelt"/>
+    <div class="blog">
+        <ul>
+            <li>Mapping Top Cameo codes in a country based on the Number of Mentions of the particular cameo code.</li>
+            <p><strong>Example:</strong> Top Trends in USA (Last Week)</p>
+        </ul>
+    </div>
+    <img src="./images/top-trends-example.png" class="img-gdelt"/>
+    <div class="blog">
+        <ul>
+            <li>Mapping Top Countries in a particular cameo code based on the Number of Mentions of the particular cameo code in the country.</li>
+            <p><strong>Example:</strong> Top Countries in Protest (Last Week)</p>
+        </ul>
+    </div>
+    <img src="./images/top-countries-example.png" class="img-gdelt"/>
+    <div class="blog">
+        <ul>
+            <li>Plat a choropleth map for a particular cameo code.</li>
+            <p><strong>Example:</strong> Protest (Today)</p>
+        </ul>
+    </div>
+    <img src="./images/map-example.png" class="img-gdelt" />
+    <div class="blog">
+        <h2>Technology Used</h2>
+        <ul>
+            <li>Python</li>
+            <li>Pandas</li>
+            <li>Plotly</li>
+        </ul>
+        <br/>
+        <a class="link link-primary" href="https://colab.research.google.com/drive/11gFRPtbPK7fz6OOUR7dYtmtdnN-O_pWM?usp=sharing">View Code</a>
+        
+    </div>
+    <br/><br/>
     <footer class="footer">
         <div class="footer-header">Connect to me</div>
         <ul class="social-links list-non-bullet">

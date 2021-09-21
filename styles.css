@@ -187,6 +187,24 @@ hr {
     width: 100%;
     margin-top: 1rem;
     text-align: left;
-    color: black;
+    color: var(--dark-grey);
 }
 
+.output-blog-2 {
+    height: 8vh;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: left;
+    color: var(--dark-grey);
+}
+
+.img-gdelt {
+    margin: 2rem;
+    width: 50%;
+    height: 50%;
+    padding: 0rem 1rem;
+    display: block;
+    max-width: 600px;
+    margin:auto;
+    
+}
