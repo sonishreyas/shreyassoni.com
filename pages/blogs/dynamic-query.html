@@ -34,8 +34,7 @@
     <div class="blog">
         <p>In this blog, we will see how we can dynamically read a query from a SOQL/SQL file in Mulesoft and execute it in Salesforce and Snowflake, and return the result in JSON format.</p>
         <h2>Why read a query from a file?</h2>
-        <p>If we directly write the query in the connector then any changes we need to be made in the query </p>        
-        
+        <p>Any changes made in the query do not affect the application and we do not have to redeploy the application. On the other hand, if we specify the query in the query connector directly we would have to redeploy each time we have a change in the query.</p>        
             <h2>Setting up tables in Salesforce and Snowflake.</h2>
             <ul>
                 <li><h3>Salesforce</h3></li>
@@ -60,19 +59,35 @@
                     <li>Create a new Database or select a database.</li>
                     <li>Create a new Schema.</li>
                     <li>Create a table according to your requirement.</li>
-                    <li>Test your table in worksheet. (Optional)</li>
+                    <li>Test your table in the worksheet. (Optional)</li>
                 </ul>
             </ul>
         <h2>Creating the Mulesoft Application</h2>
         <ul>
             <li>Create a new Mule Project.</li>
             <li>Create two new Flows.</li>
-            <li>Add a http listener to each flow. Setup the http config and give the path to them.</li>
+            <li>Add an http listener to each flow. Setup the HTTP config and give the path to them.</li>
             <li>Now, create a folder name Files in src/resources/main. Create two files named input_salesforce.soql and input_snowflake.sql.</li>
             <li>Put the select query of salesforce in input_salesforce.soql file and snowflake query in input_snowflake.sql file.</li>
-            <li>Add a file, salesforce and snowflake connector to the project from Mule Palette. I any of the connector is not present import it from exchange.</li>
+            <li>Add a file, salesforce, and snowflake connector to the project from Mule Palette. If any of the connectors is not present import it from the exchange.</li>
             <li>Add a read file connector to both the flows.</li>
             <li>Setup File Config and set the workingDir to the Files directory we created in step 4.</li>
+            <p><strong>File Read Connector:</strong><p>
+            <textarea class="output"><file:read 
+    doc:name="Read" 
+    doc:id="dea4131b-fb02-4adc-9787-d741118a1b8a" 
+    config-ref="File_Config" 
+    path="input_salesforce.soql"/>
+            </textarea>
+            <p><strong>File Configuration:</strong><p>
+                <textarea class="output" ><file:config 
+        name="File_Config" 
+        doc:name="File Config" 
+        doc:id="ffc01669-df14-488f-9340-728d803b36e5" >
+    <file:connection 
+        workingDir="${file.dir}" />
+</file:config>
+            </textarea>
             <li>Now, add a Transform Message like below.</li>
             <textarea class="output"><ee:transform doc:name="Transform Message" doc:id="3a0b21cd-639b-4c44-b9e2-21d9aa569eb8">
     <ee:message>
@@ -139,9 +154,15 @@
         </textarea>
         <li>Add a logger to Log the payload.</li>
         <li>Run the Application.</li>
+        <p><strong>Mule Flows:</strong><p></p>
         </ul>
-    </div>
+        <img src="./images/salesforce-snowflake.png" />
+        <br/><br>
+        <a class="link link-primary" href="https://github.com/sonishreyas/salesforce-snowflake-dynamic-query">View Code</a>
         
+
+    </div>
+    <br/><br/>  
 
     <footer class="footer">
         <div class="footer-header">Connect to me</div>
