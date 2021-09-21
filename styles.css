@@ -208,3 +208,12 @@ hr {
     margin:auto;
     
 }
+
+.profile-images {
+    width: 3%;
+    height: 3%;
+    border-radius: 5rem;
+    padding: 0.5rem;
+    
+}
+
