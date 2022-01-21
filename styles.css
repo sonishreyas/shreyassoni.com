@@ -1,219 +1,211 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 :root {
-    --primary-color: #111827;
-    --off-white: #F3F4F6;
-    --dark-grey: #111827
+  --primary-color: #111827;
+  --off-white: #f3f4f6;
+  --dark-grey: #111827;
 }
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px;
 }
 
 hr {
-    margin: 2rem 0rem;
+  margin: 2rem 0rem;
 }
 /** container **/
 .container {
-    padding: 0rem 1rem;
+  padding: 0rem 1rem;
 }
 .blog {
-    padding: 0rem 1rem;
-    display: block;
-    max-width: 600px;
-    margin:auto;
+  padding: 0rem 1rem;
+  display: block;
+  max-width: 600px;
+  margin: auto;
 }
 
 .container-center {
-    max-width: 600px;
-    margin:auto;
+  max-width: 600px;
+  margin: auto;
 }
 
 /** links **/
 .link {
-    box-sizing: border-box;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .link-primary {
-    background-color: var(--primary-color);
-    border-radius: 2rem;;
-    color: white
-
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  color: white;
 }
 
 .link-secondary {
-    color: var(--primary-color);
-    border-radius: 2rem;
-    border:1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 2rem;
+  border: 1px solid var(--primary-color);
 }
 
 .link-secondary-section {
-    background-color: white;
-    border-radius: 2rem;;
-    color: var(--primary-color)
-
+  background-color: white;
+  border-radius: 2rem;
+  color: var(--primary-color);
 }
 
 .link-primary-section {
-    color: white;
-    border-radius: 2rem;
-    border:1px solid var(--off-white);
+  color: white;
+  border-radius: 2rem;
+  border: 1px solid var(--off-white);
 }
 
 /** lists **/
 
 .list-non-bullet {
-    list-style: none;
+  list-style: none;
 }
 
 .list-item-inline {
-    display: inline;
-    padding: 0rem 0.5rem;
+  display: inline;
+  padding: 0rem 0.5rem;
 }
 
 /** navigation **/
 
 .navigation {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem;
-    border-bottom-left-radius: 2.5rem;
-    border-bottom-right-radius: 2.5rem;
-    
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
 }
 
 .navigation .nav-brand {
-    font-weight: bold;
-    font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .navigation .nav-pills {
-    text-align: right;
+  text-align: right;
 }
 .navigation .link {
-    color: white;
+  color: white;
 }
 
 .navigation .link-active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /** header **/
 
 .hero {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .hero .hero-img {
-    max-width: 250px;
-    display: block;
-    margin: auto;
-    border-radius: 16rem;
+  max-width: 250px;
+  display: block;
+  margin: auto;
+  border-radius: 16rem;
 }
 
 .hero .hero-heading {
-    text-align: center;
-    padding-top: 1rem;
-    color: var(--dark-grey);
-    
+  text-align: center;
+  padding-top: 1rem;
+  color: var(--dark-grey);
 }
 
 .hero .hero-heading .heading-inverted {
-    color: gray;
+  color: gray;
 }
 /** blog **/
 .blog .blog-img {
-    height: 500px;
-    width: 900px;
+  height: 500px;
+  width: 900px;
 }
 /** sections **/
 
 .section {
-    padding: 2rem;
-    margin: auto;
-    max-width: 800px;
-    border-radius: 2rem;
-    background-color: var(--primary-color);
-    color: whitesmoke;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    
+  padding: 2rem;
+  margin: auto;
+  max-width: 800px;
+  border-radius: 2rem;
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .section h1 {
-    text-align: center;
-    padding: 2rem;
+  text-align: center;
+  padding: 2rem;
 }
 
 .ow {
-    background-color: var(--off-white);
-    color: var(--dark-grey);
+  background-color: var(--off-white);
+  color: var(--dark-grey);
 }
 
 /** footers **/
 
 .footer {
-    background-color: var(--primary-color);
-    padding: 2rem 1rem;
-    text-align: center;
-    color: white;
-    border-top-right-radius: 2.5rem;
-    border-top-left-radius: 2.5rem;
-    clear: both;
-    position: relative;
+  background-color: var(--primary-color);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: white;
+  border-top-right-radius: 2.5rem;
+  border-top-left-radius: 2.5rem;
+  clear: both;
+  position: relative;
 }
 
 .footer .link {
-    color: white;
+  color: white;
 }
 
 .footer .footer-header {
-    font-weight: bold;
-    font-size: large;
+  font-weight: bold;
+  font-size: large;
 }
 .footer ul {
-    padding-inline-start: 0px;
+  padding-inline-start: 0px;
 }
 .footer .footer-img {
-    max-width: 40px;
-    display: block;
-    margin: auto;
+  max-width: 40px;
+  display: block;
+  margin: auto;
 }
 
 .output {
-    height: 25vh;
-    width: 100%;
-    margin-top: 1rem;
-    text-align: left;
-    color: var(--dark-grey);
+  height: 25vh;
+  width: 100%;
+  margin-top: 1rem;
+  text-align: left;
+  color: var(--dark-grey);
 }
 
 .output-blog-2 {
-    height: 8vh;
-    width: 100%;
-    margin-top: 1rem;
-    text-align: left;
-    color: var(--dark-grey);
+  height: 8vh;
+  width: 100%;
+  margin-top: 1rem;
+  text-align: left;
+  color: var(--dark-grey);
 }
 
 .img-gdelt {
-    margin: 2rem;
-    width: 50%;
-    height: 50%;
-    padding: 0rem 1rem;
-    display: block;
-    max-width: 600px;
-    margin:auto;
-    
+  margin: 2rem;
+  width: 50%;
+  height: 50%;
+  padding: 0rem 1rem;
+  display: block;
+  max-width: 600px;
+  margin: auto;
 }
 
 .profile-images {
-    width: 3%;
-    height: 3%;
-    border-radius: 5rem;
-    padding: 0.5rem;
-    
+  width: 3%;
+  height: 3%;
+  border-radius: 5rem;
+  padding: 0.5rem;
 }
-
