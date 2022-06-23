@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useNavbar, useTheme } from "context";
+import { headerData } from "./headerData";
 
 const Header = () => {
 	const { handleSetTheme, themeIcon } = useTheme();
@@ -21,30 +22,21 @@ const Header = () => {
 					</section>
 					<Link to={"/"} className="no-link header-brand">
 						<img
-							src="https://raw.githubusercontent.com/sonishreyas/rippleUI/dev/components/media/images/ripple-logo.png"
+							src="https://raw.githubusercontent.com/sonishreyas/ripple-jira/dev/src/backend/media/ripple-jira-logo.png"
 							alt="Logo of ripple UI"
 							className="brand-logo"
 						/>
-						<sub className="brand-name">Ripple Habits</sub>
 					</Link>
 				</div>
 				<div className="social-icon-container flex-row align-center flex-gap-2">
 					<ul className="no-list spaced-list flex-row align-center flex-gap-2 mx-5">
-						<li className="header-nav-icons h-auto pr-2">
-							<NavLink to={"/"} className={getActiveClass}>
-								Home
-							</NavLink>
-						</li>
-						<li className="header-nav-icons h-auto pr-2">
-							<NavLink to={"/dashboard"} className={getActiveClass}>
-								Dashboard
-							</NavLink>
-						</li>
-						<li className="header-nav-icons h-auto pr-2">
-							<NavLink to={"/habits/all"} className={getActiveClass}>
-								My Habits
-							</NavLink>
-						</li>
+						{headerData?.map(({ id, route, name }) => (
+							<li className="header-nav-icons h-auto pr-2" key={id}>
+								<NavLink to={route} className={getActiveClass}>
+									{name}
+								</NavLink>
+							</li>
+						))}
 						<li className="header-theme-small-icon h-auto pr-2">
 							<span className="social">
 								<i

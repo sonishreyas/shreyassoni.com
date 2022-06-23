@@ -1,8 +1,8 @@
-import { useNav } from "context";
+import { useNavbar } from "context";
 import { Link, NavLink } from "react-router-dom";
 import { navData } from "./nav-data";
 const NavBar = () => {
-	const { setShowNavbar } = useNav();
+	const { setShowNavbar } = useNavbar();
 
 	const getActiveClass = ({ isActive }) =>
 		isActive

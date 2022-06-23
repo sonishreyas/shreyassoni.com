@@ -1,7 +1,6 @@
 import { Footer, Header, NavBar } from "components";
 import { useNavbar } from "context";
 import { Outlet } from "react-router";
-import "./App.css";
 import { AppRoutes } from "./routes";
 
 function App() {

@@ -1,7 +1,7 @@
-import { useDocumentTitle } from "custom-hooks";
+import { useDocumentTitle } from "hooks";
 
 const PageNotFound = () => {
-	useDocumentTitle("404 - Page not found | Ripple");
+	useDocumentTitle("404 - Page not found");
 	return (
 		<main className="main flex-column justify-content-center align-center flex-gap-1">
 			<div className="homepage-heading">
