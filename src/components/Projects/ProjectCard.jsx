@@ -15,26 +15,40 @@ export const ProjectCard = () => {
 						liveURL,
 					}) => (
 						<article
-							className="cursor-pointer card video-card card-shadow b-radius-2"
+							className="cursor-pointer basic-card project-card card-shadow b-radius-2"
 							key={_id}
 						>
-							<article className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2 mx-5 mt-5">
+							<article className="project-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2 mx-5 mt-5">
 								<img
 									src={demoURL}
 									alt={title}
 									title={title}
-									className="video-card-image b-radius-2"
+									className="project-card-image b-radius-2"
 								/>
 							</article>
-							<section className="flex-row justify-content-start align-start mx-5 ">
-								<section className="card-content p-5 pb-0 mx-5">
-									<p
-										className="card-title text-wrap text-bold h5"
-										title={title}
-									>
+							<section className="flex-column justify-content-center align-center">
+								<section className="p-5 pb-0 text-center w-100">
+									<h3 className="text-bold text-cta-color " title={title}>
 										{title}
-									</p>
+									</h3>
 									<p className="card-category py-5">{description}</p>
+								</section>
+								<section className="text-left">
+									<h4 className="text-bold">Technology Stack: </h4>
+								</section>
+								<section className="flex-row w-100 justify-content-center align-center p-5 flex-gap-1 flex-wrap">
+									<a
+										className="no-link-decoration primary-btn p-5 b-radius-4 flex-grow-1 text-center"
+										href={githubURL}
+									>
+										View Source
+									</a>
+									<a
+										className="no-link-decoration outline-btn p-5 b-radius-4 flex-grow-1 text-center"
+										href={liveURL}
+									>
+										Watch Live
+									</a>
 								</section>
 							</section>
 						</article>

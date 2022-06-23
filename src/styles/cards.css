@@ -1,0 +1,17 @@
+.project-card-image {
+	width: 30rem;
+	height: auto;
+}
+
+.project-card-image-container {
+	width: max-content;
+	height: max-content;
+}
+
+.card-content {
+	grid-row: 2/6;
+}
+
+.primary-btn {
+	color: var(--tertiary-color);
+}
