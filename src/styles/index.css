@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400&family=Urbanist&display=swap");
 
 /* CSS */
+@import url("./app.css");
 @import url("./root-styles.css");
 @import url("./icons.css");
 @import url("./header.css");

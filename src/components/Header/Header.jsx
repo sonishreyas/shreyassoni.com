@@ -37,16 +37,14 @@ const Header = () => {
 								</NavLink>
 							</li>
 						))}
-						<li className="header-theme-small-icon h-auto pr-2">
-							<span className="social">
-								<i
-									className={`fas fa-${themeIcon} theme-icon social`}
-									aria-label="dark/light theme icon"
-									onClick={handleSetTheme}
-								></i>
-							</span>
-						</li>
 					</ul>
+					<span className="badge-icon">
+						<i
+							className={`fas fa-${themeIcon} theme-icon badge-icon`}
+							aria-label="dark/light theme icon"
+							onClick={handleSetTheme}
+						></i>
+					</span>
 				</div>
 			</div>
 		</header>
