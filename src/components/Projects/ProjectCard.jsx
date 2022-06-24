@@ -2,7 +2,7 @@ import { projects } from "data";
 
 export const ProjectCard = () => {
 	return (
-		<div className="products-container flex-row align-start flex-gap-2 flex-wrap">
+		<div className="flex-row justify-content-center align-center flex-gap-2 w-100 h-auto flex-wrap projects-container">
 			{projects.length ? (
 				projects.map(
 					({
@@ -33,19 +33,28 @@ export const ProjectCard = () => {
 									</h3>
 									<p className="card-category py-5">{description}</p>
 								</section>
-								<section className="text-left">
-									<h4 className="text-bold">Technology Stack: </h4>
+								<section className="flex-row justify-content-center align-center flex-gap-1 flex-wrap w-100">
+									{/* <h4 className="text-bold">Technology Stack: </h4> */}
+									<section className="flex-row justify-content-center align-center flex-wrap flex-gap-1">
+										{techStack?.map((name) => (
+											<section className="basic-chip">
+												<p className="basic-chip-content">{name}</p>
+											</section>
+										))}
+									</section>
 								</section>
 								<section className="flex-row w-100 justify-content-center align-center p-5 flex-gap-1 flex-wrap">
 									<a
 										className="no-link-decoration primary-btn p-5 b-radius-4 flex-grow-1 text-center"
 										href={githubURL}
+										target="_blank"
 									>
 										View Source
 									</a>
 									<a
 										className="no-link-decoration outline-btn p-5 b-radius-4 flex-grow-1 text-center"
 										href={liveURL}
+										target="_blank"
 									>
 										Watch Live
 									</a>

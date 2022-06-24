@@ -15,3 +15,7 @@
 .primary-btn {
 	color: var(--tertiary-color);
 }
+
+.basic-card {
+	width: 32rem;
+}
