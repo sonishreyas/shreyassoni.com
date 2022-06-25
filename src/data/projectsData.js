@@ -8,7 +8,7 @@ export const projects = [
 		githubURL: "https://github.com/sonishreyas/ripple-social",
 		liveURL: "https://ripple-social.netlify.app/",
 		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/feat/react-portfolio/src/media/demo/ripple-social-preview.gif",
+			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-social-preview.gif",
 	},
 	{
 		_id: uuid(),
@@ -23,7 +23,7 @@ export const projects = [
 		githubURL: "https://github.com/sonishreyas/ripple-store-app",
 		liveURL: "https://ripple-store-app.netlify.app/",
 		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/feat/react-portfolio/src/media/demo/ripple-store-desktop-preview.gif",
+			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-store-desktop-preview.gif",
 	},
 	{
 		_id: uuid(),
@@ -33,7 +33,7 @@ export const projects = [
 		githubURL: "https://github.com/sonishreyas/ripple-video-library",
 		liveURL: "https://ripple-video-library.netlify.app/",
 		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/feat/react-portfolio/src/media/demo/ripple-social-preview.gif",
+			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-social-preview.gif",
 	},
 	{
 		_id: uuid(),
@@ -43,7 +43,7 @@ export const projects = [
 		githubURL: "https://github.com/sonishreyas/ripple-quiz-app",
 		liveURL: "https://ripple-quiz-app.netlify.app/",
 		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/feat/react-portfolio/src/media/demo/ripple-quiz-app-desktop-preview.gif",
+			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-quiz-app-desktop-preview.gif",
 	},
 	{
 		_id: uuid(),
@@ -53,6 +53,6 @@ export const projects = [
 		githubURL: "https://github.com/sonishreyas/ripple-ui",
 		liveURL: "https://ripple-ui.netlify.app/",
 		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/feat/react-portfolio/src/media/demo/ripple-ui-preview-desktop.gif",
+			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-ui-preview-desktop.gif",
 	},
 ];
