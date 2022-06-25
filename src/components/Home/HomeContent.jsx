@@ -5,7 +5,7 @@ export const HomeContent = () => {
 				<section className="image-container">
 					<img
 						className="b-radius-circle round-image"
-						src="https://shreyassoni.netlify.app/images/profile.jpeg"
+						src="https://avatars.githubusercontent.com/u/46019734?v=4"
 					/>
 				</section>
 				<div className="homepage-heading">
@@ -15,8 +15,8 @@ export const HomeContent = () => {
 					<i className="text-cta-color">Software Developer</i>
 				</div>
 				<p className="h3 my-5">
-					I am a software developer currently working with Barclays and learning
-					full stack development from neogCamp 2022
+					I am a software developer currently working with Barclays <br /> and
+					learning full stack development from neogCamp 2022
 				</p>
 				<a
 					href="https://drive.google.com/file/d/1JVIsDB8WGaK1tTH7Zt71KlAPncTraaO-/view"
