@@ -19,3 +19,23 @@
 .basic-card {
 	width: 32rem;
 }
+
+.project-card {
+	height: 45rem;
+}
+
+.border-bottom {
+	border-bottom: 0.2rem solid var(--secondary-background-color);
+}
+
+.text-shadow {
+	text-shadow: 0.2rem 0.2rem var(--shadow-color);
+}
+
+.card-info-container {
+	height: 28rem;
+}
+
+.h-100 {
+	height: 100%;
+}

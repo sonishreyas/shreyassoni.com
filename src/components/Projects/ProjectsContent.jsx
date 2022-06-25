@@ -2,8 +2,10 @@ import { ProjectCard } from "./ProjectCard";
 
 export const ProjectsContent = () => {
 	return (
-		<main className="main flex-column justify-content-start align-center">
-			<div className="homepage-heading">Projects</div>
+		<main className="main flex-column justify-content-start align-start">
+			<div className="homepage-heading border-bottom p-5 my-5 w-100 text-shadow">
+				Projects
+			</div>
 			<ProjectCard />
 		</main>
 	);
