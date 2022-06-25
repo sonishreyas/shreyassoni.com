@@ -30,7 +30,7 @@ const Footer = () => {
 					<i className="fab fa-linkedin-in social"></i>
 				</a>
 			</div>
-			<p className="footer-copyright">
+			<p className="footer-copyright h6">
 				<span className="footer-copyright-icon">
 					<i className="far fa-copyright"></i>
 				</span>{" "}

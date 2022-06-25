@@ -80,3 +80,11 @@
 		background-position: top right;
 	}
 }
+
+.heading-color {
+	color: var(--heading-color);
+}
+
+.text-secondary-cta-color {
+	color: var(--secondary-cta-color);
+}

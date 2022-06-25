@@ -9,7 +9,8 @@ export const HomeContent = () => {
 					/>
 				</section>
 				<div className="homepage-heading">
-					Hi! I am <i className="text-cta-color">Shreyas Soni</i>
+					<i className="heading-color">Hi! I am</i>{" "}
+					<i className="text-cta-color">Shreyas Soni</i>
 				</div>
 				<div className="homepage-heading">
 					<i className="text-cta-color">Software Developer</i>
@@ -56,6 +57,15 @@ export const HomeContent = () => {
 							className="no-link"
 						>
 							<i className="fab fa-github social"></i>
+						</a>
+						<a
+							href="mailto:sonishreyas10@gmail.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="View Github Profile"
+							className="no-link"
+						>
+							<i className="fa-solid fa-envelope social"></i>
 						</a>
 					</div>
 				</div>
