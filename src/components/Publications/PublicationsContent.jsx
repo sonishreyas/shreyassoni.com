@@ -10,7 +10,7 @@ export const PublicationsContent = () => {
 			<div className="flex-column justify-content-center align-start flex-gap-2">
 				{publicationsData?.length &&
 					publicationsData.map(
-						({ title, publishedDate, paperURL, description }) => (
+						({ title, publishedDate, paperURL, description, codeURL }) => (
 							<article className="flex-row justify-content-space-between align-start flex-gap-2 flex-wrap">
 								<article className="flex-column justify-content-center align-start flex-gap-half p-5 date-container">
 									{publishedDate?.length ? (
@@ -37,6 +37,14 @@ export const PublicationsContent = () => {
 													target="_blank"
 												>
 													Read
+												</a>
+												<i> | </i>
+												<a
+													className="no-link-decoration link-btn"
+													href={codeURL}
+													target="_blank"
+												>
+													View Code
 												</a>
 											</li>
 										) : (
