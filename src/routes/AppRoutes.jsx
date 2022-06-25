@@ -1,4 +1,11 @@
-import { Blogs, Experience, Home, PageNotFound, Projects } from "pages";
+import {
+	Blogs,
+	Experience,
+	Home,
+	PageNotFound,
+	Projects,
+	Publications,
+} from "pages";
 import { Routes, Route } from "react-router-dom";
 
 const AppRoutes = () => {
@@ -8,6 +15,7 @@ const AppRoutes = () => {
 			<Route path="/projects" element={<Projects />} />
 			<Route path="/experience" element={<Experience />} />
 			<Route path="/blogs" element={<Blogs />} />
+			<Route path="/publications" element={<Publications />} />
 			<Route path="*" element={<PageNotFound />} />
 		</Routes>
 	);

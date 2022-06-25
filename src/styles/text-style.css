@@ -88,3 +88,7 @@
 .text-secondary-cta-color {
 	color: var(--secondary-cta-color);
 }
+
+.text-limit {
+	word-wrap: break-word;
+}

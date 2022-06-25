@@ -31,21 +31,21 @@ export const ExperienceContent = () => {
 									)}
 									<p className="h4">{location}</p>
 								</article>
-								<article className="flex-column justify-content-center align-start flex-gap-1 p-5">
+								<article className="flex-column justify-content-center align-start flex-gap-1 p-5 info-container">
 									{company?.length ? (
 										<h1 className="heading-color text-bold">{company}</h1>
 									) : (
 										<></>
 									)}
 									<h3 className="text-secondary-cta-color">{position}</h3>
-									<ul>
+									<div className="flex-column justify-content-start align-start">
 										{description.map((item, index) => (
-											<li className="h4 no-list my-2" key={index}>
+											<p className="h4 no-list my-2 text-limit" key={index}>
 												{item}
-											</li>
+											</p>
 										))}
 										{codeURL?.length ? (
-											<li className="h4 no-list mt-5 pt-5">
+											<p className="h4 no-list mt-5 pt-5">
 												<a
 													className="no-link-decoration link-btn"
 													href={codeURL}
@@ -53,11 +53,11 @@ export const ExperienceContent = () => {
 												>
 													View Code
 												</a>
-											</li>
+											</p>
 										) : (
 											<></>
 										)}
-									</ul>
+									</div>
 								</article>
 							</article>
 						)
