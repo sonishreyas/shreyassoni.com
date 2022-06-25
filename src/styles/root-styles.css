@@ -1,0 +1,31 @@
+:root {
+	font-family: "Overpass";
+	--heading-color-light: #000;
+	--heading-color-dark: #dfdfe2;
+	--secondary-cta-color-dark: #70eb95;
+	--secondary-cta-color-light: #01b77a;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--heading-color: var(--heading-color-light);
+		--secondary-cta-color: var(--secondary-cta-color-light);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--heading-color: var(--heading-color-dark);
+		--secondary-cta-color: var(--secondary-cta-color-dark);
+	}
+}
+
+[color-scheme="dark"] {
+	--heading-color: var(--heading-color-dark);
+	--secondary-cta-color: var(--secondary-cta-color-dark);
+}
+
+[color-scheme="light"] {
+	--heading-color: var(--heading-color-light);
+	--secondary-cta-color: var(--secondary-cta-color-light);
+}
