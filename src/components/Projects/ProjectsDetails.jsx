@@ -1,7 +1,7 @@
 import { projectsDetailsData } from "data";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router";
-
+import { v4 as uuid } from "uuid";
 export const ProjectsDetails = () => {
 	const { projectKey } = useParams();
 	const {
@@ -26,10 +26,7 @@ export const ProjectsDetails = () => {
 				<article className="card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2 w-100 p-5">
 					<iframe
 						src={demoURL}
-						frameborder="0"
-						webkitallowfullscreen
-						mozallowfullscreen
-						allowfullscreen
+						frameBorder="0"
 						className="w-100 h-auto b-radius-2 detail-video-demo"
 					></iframe>
 				</article>
@@ -40,7 +37,7 @@ export const ProjectsDetails = () => {
 					</h2>
 					<ul className="flex-column justify-content-start align-start">
 						{features.map((item, index) => (
-							<li className="h4 my-2 mx-10 text-limit" key={index}>
+							<li className="h4 my-2 mx-10 text-limit" key={uuid()}>
 								{item}
 							</li>
 						))}
@@ -51,7 +48,10 @@ export const ProjectsDetails = () => {
 					<div className="flex-column justify-content-start align-start">
 						<section className="flex-row justify-content-center align-center flex-wrap flex-gap-1">
 							{techStack?.map((name) => (
-								<section className="basic-chip secondary-chip-color">
+								<section
+									className="basic-chip secondary-chip-color"
+									key={uuid()}
+								>
 									<p className="basic-chip-content p-2 h5">{name}</p>
 								</section>
 							))}
