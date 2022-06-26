@@ -60,11 +60,34 @@
 	width: 78%;
 }
 
+.detail-video-demo {
+	min-height: 20rem;
+	height: 62rem;
+	width: 100%;
+}
+
+.secondary-chip-color {
+	background-color: var(--secondary-background-color);
+}
 @media screen and (max-width: 1024px) {
 	.info-container {
 		width: 100%;
 	}
 	.date-container {
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.detail-video-demo {
+		min-height: 20rem;
+		height: 30rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.detail-video-demo {
+		min-height: 20rem;
+		height: 25rem;
 	}
 }

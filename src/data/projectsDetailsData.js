@@ -1,11 +1,36 @@
 export const projectsDetailsData = {
 	"ripple-social": {
 		title: "Ripple Social",
-		description: "Ripple is a social media app",
-		techStack: ["ReactJS", "Redux Toolkit", "Firebase"],
+		description:
+			"Ripple is a social media app that helps you connect and share your work with friends and connections. Below are the key features of the app.",
+		techStack: [
+			"ReactJS",
+			"Redux Toolkit",
+			"Firebase",
+			"HTML",
+			"CSS",
+			"RippleUI",
+		],
 		githubURL: "https://github.com/sonishreyas/ripple-social",
 		liveURL: "https://ripple-social.netlify.app/",
-		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/videos/ripple-social.mp4",
+		demoURL: "https://www.loom.com/embed/a5c3adf16f454a8ca448488519f93847",
+		features: [
+			"Infinite Scroll",
+			"Debounce Search",
+			"Shimmering",
+			"Create Posts (image, video, gif, document, and emojis)",
+			"Edit and Delete Posts",
+			"User Feed",
+			"Explore Page",
+			"User Profile Page (Edit Profile, Posts)",
+			"User Profile and background Picture",
+			"Follow/Unfollow other users",
+			"Authentication (Signup, Login, and Logout)",
+			" Bookmark Posts",
+			"Like Posts",
+			"Comments",
+			"Suggested users",
+			"Sort Posts",
+		],
 	},
 };
