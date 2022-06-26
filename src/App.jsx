@@ -17,7 +17,7 @@ function App() {
 			<AppRoutes />
 			{showNavbar && <NavBar />}
 			<Outlet />
-			<Footer />
+			{location.pathname !== "/" && <Footer />}
 		</div>
 	);
 }

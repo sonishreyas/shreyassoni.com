@@ -1,4 +1,5 @@
 import { projects } from "data";
+import { Link } from "react-router-dom";
 
 export const ProjectCard = () => {
 	return (
@@ -13,33 +14,37 @@ export const ProjectCard = () => {
 						githubURL,
 						demoURL,
 						liveURL,
+						key,
 					}) => (
 						<article
 							className="cursor-pointer basic-card project-card card-shadow b-radius-2"
 							key={_id}
 						>
-							<article className="project-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2 mx-5 mt-5">
+							<Link
+								to={`/projects/${key}`}
+								className="no-link-decoration project-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2 mx-5 mt-5"
+							>
 								<img
 									src={demoURL}
 									alt={title}
 									title={title}
 									className="project-card-image b-radius-2"
 								/>
-							</article>
+							</Link>
 							<article className="card-info-container">
 								<section className="flex-column justify-content-start align-center flex-grow-1 h-100">
 									<section className="flex-column justify-content-start align-center flex-grow-1 h-100">
-										<section className="p-5 pb-0 text-center w-100">
-											<h3
-												className="text-bold text-cta-color shimmer"
+										<section className="p-5 pb-0 text-center w-100 my-5">
+											<Link
+												to={`/projects/${key}`}
+												className="no-link-decoration text-bold text-cta-color shimmer h2"
 												title={title}
 											>
 												{title}
-											</h3>
+											</Link>
 											<p className="card-category py-5">{description}</p>
 										</section>
 										<section className="flex-row justify-content-center align-center flex-gap-1 flex-wrap w-100">
-											{/* <h4 className="text-bold">Technology Stack: </h4> */}
 											<section className="flex-row justify-content-center align-center flex-wrap flex-gap-1">
 												{techStack?.map((name) => (
 													<section className="basic-chip">

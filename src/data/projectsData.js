@@ -9,6 +9,7 @@ export const projects = [
 		liveURL: "https://ripple-social.netlify.app/",
 		demoURL:
 			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-social-preview.gif",
+		key: "ripple-social",
 	},
 	{
 		_id: uuid(),
@@ -24,7 +25,9 @@ export const projects = [
 		liveURL: "https://ripple-store-app.netlify.app/",
 		demoURL:
 			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-store-desktop-preview.gif",
+		key: "ripple-store",
 	},
+
 	{
 		_id: uuid(),
 		title: "Ripple Play",
@@ -34,6 +37,7 @@ export const projects = [
 		liveURL: "https://ripple-video-library.netlify.app/",
 		demoURL:
 			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-social-preview.gif",
+		key: "ripple-play",
 	},
 	{
 		_id: uuid(),
@@ -44,6 +48,7 @@ export const projects = [
 		liveURL: "https://ripple-quiz-app.netlify.app/",
 		demoURL:
 			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-quiz-app-desktop-preview.gif",
+		key: "ripple-quiz",
 	},
 	{
 		_id: uuid(),
@@ -54,5 +59,6 @@ export const projects = [
 		liveURL: "https://ripple-ui.netlify.app/",
 		demoURL:
 			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-ui-preview-desktop.gif",
+		key: "ripple-ui",
 	},
 ];
