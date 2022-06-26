@@ -53,9 +53,18 @@
 }
 
 .date-container {
-	width: 25rem;
+	width: 20%;
 }
 
 .info-container {
-	width: 100rem;
+	width: 78%;
+}
+
+@media screen and (max-width: 1024px) {
+	.info-container {
+		width: 100%;
+	}
+	.date-container {
+		width: 100%;
+	}
 }

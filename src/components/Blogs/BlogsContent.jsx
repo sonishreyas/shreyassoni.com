@@ -11,7 +11,7 @@ export const BlogsContent = () => {
 				{blogsData?.length &&
 					blogsData.map(
 						({ title, publishedDate, readTime, blogURL, description }) => (
-							<article className="flex-row justify-content-space-between align-start flex-gap-2 flex-wrap">
+							<article className="flex-row justify-content-space-between align-start flex-gap-2 flex-wrap w-100">
 								<article className="flex-column justify-content-center align-start flex-gap-half p-5 date-container">
 									{publishedDate?.length ? (
 										<p className="h4">{publishedDate}</p>

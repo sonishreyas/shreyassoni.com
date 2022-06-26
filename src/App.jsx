@@ -1,10 +1,16 @@
 import { Footer, Header, NavBar } from "components";
 import { useNavbar } from "context";
-import { Outlet } from "react-router";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router";
 import { AppRoutes } from "./routes";
 
 function App() {
-	const { showNavbar } = useNavbar();
+	const { showNavbar, setShowNavbar } = useNavbar();
+	const location = useLocation();
+
+	useEffect(() => {
+		setShowNavbar(false);
+	}, [location]);
 	return (
 		<div className="grid-container">
 			<Header />

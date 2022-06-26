@@ -20,7 +20,7 @@ export const ExperienceContent = () => {
 							description,
 							codeURL,
 						}) => (
-							<article className="flex-row justify-content-space-between align-start flex-gap-2 flex-wrap">
+							<article className="flex-row justify-content-space-between align-start flex-gap-2 flex-wrap w-100">
 								<article className="flex-column justify-content-center align-start flex-gap-half p-5 date-container">
 									{startDate?.length ? (
 										<p className="h4">
