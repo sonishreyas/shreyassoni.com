@@ -33,15 +33,17 @@ export const ProjectCard = () => {
 							</Link>
 							<article className="card-info-container">
 								<section className="flex-column justify-content-start align-center flex-grow-1 h-100">
-									<section className="flex-column justify-content-start align-center flex-grow-1 h-100">
+									<Link
+										to={`/projects/${key}`}
+										className="no-link-decoration flex-column justify-content-start align-center flex-grow-1 h-100"
+									>
 										<section className="p-5 pb-0 text-center w-100 my-5">
-											<Link
-												to={`/projects/${key}`}
-												className="no-link-decoration text-bold text-cta-color shimmer h2"
+											<section
+												className="text-bold text-cta-color shimmer h2"
 												title={title}
 											>
 												{title}
-											</Link>
+											</section>
 											<p className="card-category py-5">{description}</p>
 										</section>
 										<section className="flex-row justify-content-center align-center flex-gap-1 flex-wrap w-100">
@@ -53,7 +55,7 @@ export const ProjectCard = () => {
 												))}
 											</section>
 										</section>
-									</section>
+									</Link>
 									<section className="flex-row w-100 justify-content-center align-center p-5 flex-gap-1 flex-wrap">
 										<a
 											className="no-link-decoration primary-btn p-5 b-radius-4 flex-grow-1 text-center"

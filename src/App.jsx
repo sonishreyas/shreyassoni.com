@@ -8,6 +8,7 @@ function App() {
 	const { showNavbar, setShowNavbar } = useNavbar();
 	const location = useLocation();
 
+	useEffect(() => window.scrollTo(0, 0), []);
 	useEffect(() => {
 		setShowNavbar(false);
 	}, [location]);
