@@ -5,3 +5,4 @@ export * from "./Experience";
 export * from "./Blogs";
 export * from "./Publications";
 export * from "./ProjectsDetails";
+export * from "./Education";

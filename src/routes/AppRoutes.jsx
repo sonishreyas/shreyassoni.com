@@ -1,5 +1,6 @@
 import {
 	Blogs,
+	Education,
 	Experience,
 	Home,
 	PageNotFound,
@@ -18,6 +19,7 @@ const AppRoutes = () => {
 			<Route path="/experience" element={<Experience />} />
 			<Route path="/blogs" element={<Blogs />} />
 			<Route path="/publications" element={<Publications />} />
+			<Route path="/education" element={<Education />} />
 			<Route path="*" element={<PageNotFound />} />
 		</Routes>
 	);

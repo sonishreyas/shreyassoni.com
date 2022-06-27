@@ -31,4 +31,10 @@ export const navData = [
 		name: "Blogs",
 		icon: "fa-brands fa-blogger",
 	},
+	{
+		id: uuid(),
+		route: "/education",
+		name: "Education",
+		icon: "fa-solid fa-graduation-cap",
+	},
 ];

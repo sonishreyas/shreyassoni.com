@@ -3,3 +3,4 @@ export * from "./experienceData";
 export * from "./blogsData";
 export * from "./publicationsData";
 export * from "./projectsDetailsData";
+export * from "./educationData";

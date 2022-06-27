@@ -26,4 +26,9 @@ export const headerData = [
 		route: "/blogs",
 		name: "Blogs",
 	},
+	{
+		id: uuid(),
+		route: "/education",
+		name: "Education",
+	},
 ];
