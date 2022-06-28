@@ -54,7 +54,7 @@ export const projects = [
 		githubURL: "https://github.com/sonishreyas/ripple-video-library",
 		liveURL: "https://ripple-video-library.netlify.app/",
 		demoURL:
-			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-social-preview.gif",
+			"https://raw.githubusercontent.com/sonishreyas/shreyassoni.com/main/src/media/demo/ripple-play-desktop-preview.gif",
 		key: "ripple-play",
 	},
 	{
