@@ -20,7 +20,7 @@ export const HomeContent = () => {
 					learning full stack development from neogCamp 2022
 				</p>
 				<a
-					href="https://drive.google.com/file/d/1JVIsDB8WGaK1tTH7Zt71KlAPncTraaO-/view"
+					href="https://drive.google.com/file/d/1M0P82PhwUY6Mx6Nj9GgHlsqT80jztXWc/view?usp=sharing"
 					target="_blank"
 					className="no-link-decoration primary-btn p-5 b-radius-4 text-bold h3 my-5"
 					aria-label="Resume"
